@@ -1,8 +1,49 @@
 <!DOCTYPE html>
 <html>
-<title>Page Title</title>
+<head>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
 </head>
 <body>
+
 <body style="background-color:lightblue;">
   
   <h1>i'm mary</h1>
@@ -21,32 +62,44 @@
     <li>running</li>
     <li>ultimate frisbee</li>
 
-<h2>projects i've worked on</h2>
-    <p><b>Omabicon</b></p>
-    <p>The Obama Hope poster gained a lot of popularity and you're probably familar with the picture. We wrote a code to take any image and apply that same filter to it -- to "Obamify" the image.
-      We basically used a for loop so that the computer looked through all of the pixels in a given image. Depending on the intensity
-      of a pixel, the computer would assign the pixel one of four new RGB values. Intensity was a variable that we defined as all the
-      RGB values of the pixel added together. The four different colors that were assigned were Dark Blue, Light Blue, Yellow, and Red,
-      and we used an If/Then statement to assign different colors based on the intensity. </p>
-    
-    <p><b>Draw Shapes</b></p>
-    <p>We used Python to access the Turtle Library to write a code that drew shapes. We used functions like forward, left, and right to
-      control the movement of the "turtle" by giving it a certain value of degrees to turn. We could also control the pen color by 
-      referencing specfic colors that the library was familiar with. We experimented with for loops to make triangles, squares, pentagons,
-      etc. by inputting the formula for the number of degrees in a certain figure with n sides so that we could make shapes with
-      continuously increasing number of sides.
-      
-    <p><b>Robots</b></p>
-    <p>This was my favorite project! The robot was pre-assembled, but we were able to experiment a lot with making circuits on the 
-      breadboard including LEDs, servo motors, piezo tone buzzers, and whisker wires that acted as tactile sensors. By writing a code
-      in Arduino, we were able to make our robot sing and dance, as well as make a triggered response for when it ran into an object
-      like a wall. We could make the robot emit certain tones by connecting the piezo and establishing a list of "notes" that were 
-      defined by specific frequencies. The list of notes was placed in a for loop so that the robot would loop through all of the notes
-      in the loop to play a song. The for loop was also used to repeat the robot's movements through functions like servoLeft.writeMicroseconds
-      that would control the movement of the left servo. </p>
-    
-    
-    
+<p>Check out my projects!:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openProject(event, 'Obamicon')">Obamicon</button>
+  <button class="tablinks" onclick="openProject(event, 'Draw Shapes')">Draw Shapes</button>
+  <button class="tablinks" onclick="openProject(event, 'Robotics')">Robotics</button>
+</div>
+
+<div id="Obamicon" class="tabcontent">
+  <h3>Obamicon</h3>
+  <p>The Obama Hope poster gained a lot of popularity and you're probably familar with the picture. We wrote a code to take any image and apply that same filter to it -- to "Obamify" the image. We basically used a for loop so that the computer looked through all of the pixels in a given image. Depending on the intensity of a pixel, the computer would assign the pixel one of four new RGB values. Intensity was a variable that we defined as all the RGB values of the pixel added together. The four different colors that were assigned were Dark Blue, Light Blue, Yellow, and Red, and we used an If/Then statement to assign different colors based on the intensity.</p>
+</div>
+
+<div id="Draw Shapes" class="tabcontent">
+  <h3>Draw Shapes</h3>
+  <p>We used Python to access the Turtle Library to write a code that drew shapes. We used functions like forward, left, and right to control the movement of the "turtle" by giving it a certain value of degrees to turn. We could also control the pen color by referencing specfic colors that the library was familiar with. We experimented with for loops to make triangles, squares, pentagons, etc. by inputting the formula for the number of degrees in a certain figure with n sides so that we could make shapes with continuously increasing number of sides.</p> 
+</div>
+
+<div id="Robotics" class="tabcontent">
+  <h3>Robotics</h3>
+  <p>This was my favorite project! The robot was pre-assembled, but we were able to experiment a lot with making circuits on the breadboard including LEDs, servo motors, piezo tone buzzers, and whisker wires that acted as tactile sensors. By writing a code in Arduino, we were able to make our robot sing and dance, as well as make a triggered response for when it ran into an object like a wall. We could make the robot emit certain tones by connecting the piezo and establishing a list of "notes" that were defined by specific frequencies. The list of notes was placed in a for loop so that the robot would loop through all of the notes in the loop to play a song. The for loop was also used to repeat the robot's movements through functions like servoLeft.writeMicroseconds that would control the movement of the left servo.</p>
+</div>
+
+<script>
+function openProject(evt, projectName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(projectName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     
 </body>
-</html>
-  
+</html> 
