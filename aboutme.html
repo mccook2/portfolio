@@ -12,13 +12,13 @@ div.tab {
 /* Style the buttons inside the tab */
 div.tab button {
     background-color: inherit;
-    float: left;
+    float: center;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 16px 16px;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 20px;
 }
 /* Change background color of buttons on hover */
 div.tab button:hover {
@@ -45,6 +45,7 @@ div.tab button.active {
 
 <div class="tab">
   <button class="tablinks" onclick="openProject(event, 'About Me')">About Me</button>
+  <button class="tablinks" onclick="openProject(event, 'Text Adventure')">Text Adventure</button>
   <button class="tablinks" onclick="openProject(event, 'Obamicon')">Obamicon</button>
   <button class="tablinks" onclick="openProject(event, 'Draw Shapes')">Draw Shapes</button>
   <button class="tablinks" onclick="openProject(event, 'Robotics')">Robotics</button>
@@ -67,19 +68,24 @@ div.tab button.active {
     <li>running</li>
     <li>ultimate frisbee</li>
     </div>
+    
+<div id="Text Adventure" class="tabcontent">
+	
+    <p>Text Adventure was a project in Python where we made a "choose your own adventure" style game. Through the use of conditionals (if/then statements), we created a program that would advance a story by giving a certain output depending on the user's input. For example, the user would have the choice of going "left" or "right", and going left would affect the story in a different way than going right would. This was a really fun project because we could be really creative in designing the story however we wanted to. We took it a step further by adding nested conditionals so that each branch of the original conditional contained a conditional within it, thereby increasing the number of outcomes that the game could have.
+    </div>
 
 <div id="Obamicon" class="tabcontent">
-  <h3>Obamicon</h3>
+  
   <p>The Obama Hope poster gained a lot of popularity and you're probably familar with the picture. We wrote a code to take any image and apply that same filter to it -- to "Obamify" the image. We basically used a for loop so that the computer looked through all of the pixels in a given image. Depending on the intensity of a pixel, the computer would assign the pixel one of four new RGB values. Intensity was a variable that we defined as all the RGB values of the pixel added together. The four different colors that were assigned were Dark Blue, Light Blue, Yellow, and Red, and we used an If/Then statement to assign different colors based on the intensity.</p>
 </div>
 
 <div id="Draw Shapes" class="tabcontent">
-  <h3>Draw Shapes</h3>
+ 
   <p>We used Python to access the Turtle Library to write a code that drew shapes. We used functions like forward, left, and right to control the movement of the "turtle" by giving it a certain value of degrees to turn. We could also control the pen color by referencing specfic colors that the library was familiar with. We experimented with for loops to make triangles, squares, pentagons, etc. by inputting the formula for the number of degrees in a certain figure with n sides so that we could make shapes with continuously increasing number of sides.</p> 
 </div>
 
 <div id="Robotics" class="tabcontent">
-  <h3>Robotics</h3>
+  
   <p>This was my favorite project! The robot was pre-assembled, but we were able to experiment a lot with making circuits on the breadboard including LEDs, servo motors, piezo tone buzzers, and whisker wires that acted as tactile sensors. By writing a code in Arduino, we were able to make our robot sing and dance, as well as make a triggered response for when it ran into an object like a wall. We could make the robot emit certain tones by connecting the piezo and establishing a list of "notes" that were defined by specific frequencies. The list of notes was placed in a for loop so that the robot would loop through all of the notes in the loop to play a song. The for loop was also used to repeat the robot's movements through functions like servoLeft.writeMicroseconds that would control the movement of the left servo.</p>
 </div>
   
